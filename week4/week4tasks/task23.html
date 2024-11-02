@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1 id="mainTitle">Original Title</h1>
+    <p id="mainParagraph">This is the original paragraph text.</p>
+    <button id="changeTextButton">Change Text</button>
+
+    <script>
+        document.getElementById('changeTextButton').addEventListener('click', function() {
+            document.getElementById('mainTitle').textContent = 'Updated Title';
+            document.getElementById('mainParagraph').innerHTML = 'This is the updated paragraph text.';
+        });
+    </script>
+</body>
+</html>

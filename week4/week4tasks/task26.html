@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        .temp-paragraph {
+            background-color: #e2e214;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #4e2ce9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Paragraph</h1>
+    <button id="createParagraphButton">Create Paragraph</button>
+
+    <script>
+        document.getElementById('createParagraphButton').addEventListener('click', function() {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'This paragraph will disappear in 3 seconds.';
+            newParagraph.classList.add('temp-paragraph');
+            document.body.appendChild(newParagraph);
+            setTimeout(() => {
+                newParagraph.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

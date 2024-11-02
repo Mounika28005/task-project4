@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>JavaScript Data Types</h1>
+    <div id="output"></div>
+
+    <script>
+        let str = "Mounika";        
+        let num = 20;                      
+        let bool = false;                  
+        let n = null;                      
+        let undef;                        
+        let sym = Symbol('unique');       
+        let obj = { key: "value" };      
+
+        let output = `
+            Type of str: ${typeof str} <br>
+            Type of num: ${typeof num} <br>
+            Type of bool: ${typeof bool} <br>
+            Type of n: ${typeof null} <br>
+            Type of undef: ${typeof undef} <br>
+            Type of sym: ${typeof sym} <br>
+            Type of obj: ${typeof obj} <br>
+        `;
+
+        document.getElementById('output').innerHTML = output;
+    </script>
+</body>
+</html>

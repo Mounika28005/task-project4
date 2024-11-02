@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Dynamic Form Example</h1>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age"><br><br>
+
+        <button type="button" id="changePlaceholdersButton">Change Placeholders</button>
+    </form>
+
+    <script>
+        document.getElementById('changePlaceholdersButton').addEventListener('click', function() {
+            document.getElementById('name').setAttribute('placeholder', 'Your full name');
+            document.getElementById('email').setAttribute('placeholder', 'example@example.com');
+            document.getElementById('age').setAttribute('placeholder', 'Your age in years');
+        });
+    </script>
+</body>
+</html>

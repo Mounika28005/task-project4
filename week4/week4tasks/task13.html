@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Object Method Example</h1>
+    <button onclick="printName()">Print Name</button>
+    
+    <h2 id="nameOutput"></h2>
+
+    <script>
+        const person = {
+            name: "Mounika",
+            age: 20,
+            city: "Hindupur",
+            printName: function() {
+                return `My name is ${this.name}.`;
+            }
+        };
+        function printName() {
+            const nameMessage = person.printName();
+            document.getElementById('nameOutput').innerText = nameMessage;
+        }
+    </script>
+</body>
+</html>

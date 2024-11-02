@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        .highlight {
+            background-color: rgb(221, 113, 12);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Welcome to My Webpage</h1>
+    <p class="text">This is a paragraph with a class.</p>
+    <p class="text highlight">This is another paragraph with a class and a highlight.</p>
+    <div id="content">
+        <p>This is content inside a div.</p>
+    </div>
+    <button id="logButton">Log Element Selections</button>
+
+    <script>
+        document.getElementById('logButton').addEventListener('click', function() {
+            // Select by ID
+            const titleElement = document.getElementById('main-title');
+            console.log('Element selected by ID (main-title):', titleElement);
+
+            // Select by class
+            const textElements = document.getElementsByClassName('text');
+            console.log('Elements selected by class (text):', textElements);
+
+            // Select by tag name
+            const paragraphElements = document.getElementsByTagName('p');
+            console.log('Elements selected by tag name (p):', paragraphElements);
+        });
+    </script>
+</body>
+</html>

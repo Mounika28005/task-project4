@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Calculate the Square of a Number</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number" required>
+    <button onclick="calculate()">Calculate Square</button>
+    
+    <h2 id="result"></h2>
+
+    <script>
+        function squareDeclaration(num) {
+            return num * num;
+        }
+        const squareExpression = function(num) {
+            return num * num;
+        };
+        const squareArrow = (num) => num * num;
+
+        function calculate() {
+            const number = parseFloat(document.getElementById('numberInput').value);
+            const result = squareArrow(number);
+            document.getElementById('result').innerText = `Square: ${result}`;
+        }
+    </script>
+</body>
+</html>

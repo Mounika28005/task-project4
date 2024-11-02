@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        p {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ed1212;
+        }
+    </style>
+</head>
+<body>
+    <h1>Change Background Color of Paragraphs</h1>
+    <p>Hi,This is Mounika .</p>
+    <p>Hi,Thia is Mounika.</p>
+    <p>Hi,Thia is Mounika..</p>
+    <button id="changeColorButton">Change Background Color</button>
+
+    <script>
+        document.getElementById('changeColorButton').addEventListener('click', function() {
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(paragraph => {
+                paragraph.style.backgroundColor = 'lightblue';
+            });
+            console.log('Paragraphs changed:', paragraphs);
+        });
+    </script>
+</body>
+</html>

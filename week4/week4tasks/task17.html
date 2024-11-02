@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array</title>
+</head>
+<body>
+    <h1>Modify Array</h1>
+
+    <h3>Initial Array: <span id="arrayOutput"></span></h3>
+
+    <input type="text" id="newElement" placeholder="Add new fruit" />
+    <button onclick="addElement()">Add Fruit</button>
+
+    <input type="number" id="removeIndex" placeholder="Index to remove" />
+    <button onclick="removeElement()">Remove Fruit</button>
+
+    <input type="number" id="updateIndex" placeholder="Index to update" />
+    <input type="text" id="updatedValue" placeholder="New value" />
+    <button onclick="updateElement()">Update Fruit</button>
+
+    <h3>Array: <span id="modifiedOutput"></span></h3>
+
+    <script>
+        let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+        function displayArray() {
+            document.getElementById('arrayOutput').innerText = fruits.join(', ');
+            document.getElementById('modifiedOutput').innerText = fruits.join(', ');
+        }
+        function addElement() {
+            const newElement = document.getElementById('newElement').value;
+            if (newElement) {
+                fruits.push(newElement);
+                document.getElementById('newElement').value = ''; 
+            }
+        }
+        function removeElement() {
+            const index = parseInt(document.getElementById('removeIndex').value);
+            if (index >= 0 && index < fruits.length) {
+                fruits.splice(index, 1);
+                document.getElementById('removeIndex').value = ''; 
+                displayArray();
+            }
+        }
+        function updateElement() {
+            const index = parseInt(document.getElementById('updateIndex').value);
+            const updatedValue = document.getElementById('updatedValue').value;
+            if (index >= 0 && index < fruits.length && updatedValue) {
+                fruits[index] = updatedValue;
+                document.getElementById('updateIndex').value = ''; 
+                document.getElementById('updatedValue').value = '';
+                displayArray();
+            }
+        }
+        displayArray();
+    </script>
+</body>
+</html>

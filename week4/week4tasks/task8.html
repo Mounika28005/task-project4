@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="languageCode" placeholder="Enter language code (en, fr, es, de, etc.)" required>
+    <button onclick="displayGreeting()">Get Greeting</button>
+    
+    <h2 id="greetingMessage"></h2>
+
+    <script>
+        function displayGreeting() {
+            const langCode = document.getElementById('languageCode').value.toLowerCase();
+            let greeting;
+
+            switch (langCode) {
+                case 'en':
+                    greeting = "Hello!";
+                    break;
+                case 'fr':
+                    greeting = "Bonjour!";
+                    break;
+                case 'es':
+                    greeting = "¡Hola!";
+                    break;
+                case 'de':
+                    greeting = "Hallo!";
+                    break;
+                case 'it':
+                    greeting = "Ciao!";
+                    break;
+                case 'jp':
+                    greeting = "こんにちは (Konnichiwa)!";
+                    break;
+                default:
+                    greeting = "Language not supported.";
+            }
+
+            document.getElementById('greetingMessage').innerText = greeting;
+        }
+    </script>
+</body>
+</html>

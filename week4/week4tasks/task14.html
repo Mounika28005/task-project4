@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Book Creator</h1>
+    
+    <input type="text" id="title" placeholder="Enter book title" required>
+    <input type="text" id="author" placeholder="Enter author name" required>
+    <input type="number" id="year" placeholder="Enter publication year" required>
+    <button onclick="createBook()">Create Book</button>
+    
+    <h2>Book Details:</h2>
+    <div id="bookOutput"></div>
+
+    <script>
+        function Book(title, author, year) {
+            this.title = title;
+            this.author = author;
+            this.year = year;
+        }
+        function createBook() {
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const year = parseInt(document.getElementById('year').value);
+
+            const newBook = new Book(title, author, year);
+            displayBook(newBook);
+        }
+        function displayBook(book) {
+            const output = `
+                <p><strong>Title:</strong> ${book.title}</p>
+                <p><strong>Author:</strong> ${book.author}</p>
+                <p><strong>Year:</strong> ${book.year}</p>
+            `;
+            document.getElementById('bookOutput').innerHTML = output;
+        }
+    </script>
+</body>
+</html>

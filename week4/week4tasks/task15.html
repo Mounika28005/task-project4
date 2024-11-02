@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Animal and Dog Classes</h1>
+
+    <button onclick="createAnimals()">Create Animals</button>
+    
+    <h2>Animal Sounds:</h2>
+    <div id="animalOutput"></div>
+
+    <script>
+        class Animal {
+            constructor(name, type) {
+                this.name = name;
+                this.type = type;
+            }
+
+            speak() {
+                return `${this.name} speaks bow!`;
+            }
+        }
+        class Dog extends Animal {
+            bark() {
+                return `${this.name} barks! Woof!`;
+            }
+        }
+        function createAnimals() {
+            const animal = new Animal("Simba", "Cat");
+            const dog = new Dog("Buddy", "Dog");
+
+            const output = `
+                <p>${animal.speak()}</p>
+                <p>${dog.speak()}</p>
+                <p>${dog.bark()}</p>
+            `;
+            document.getElementById('animalOutput').innerHTML = output;
+        }
+    </script>
+</body>
+</html>

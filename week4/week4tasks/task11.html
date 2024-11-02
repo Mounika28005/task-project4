@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Local vs Global Scope</h1>
+    <button onclick="showScopes()">Show Variable Values</button>
+    <h2 id="result"></h2>
+
+    <script>
+        const globalVar = "I am a global variable!";
+
+        function showScopes() {
+            const localVar = "I am a local variable!";
+            const message = globalVar + "<br>" + localVar;
+            document.getElementById('result').innerHTML = message;
+        }
+    </script>
+</body>
+</html>

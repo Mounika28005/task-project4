@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Traversal</h1>
+    <ul id="fruitList">
+        <li>Mango</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+    <button id="traverseButton">Traverse List</button>
+
+    <script>
+        document.getElementById('traverseButton').addEventListener('click', function() {
+            const listItems = document.querySelectorAll('#fruitList li');
+
+            listItems.forEach(item => {
+                console.log('Current node:', item.nodeName);
+                console.log('Parent node:', item.parentNode.nodeName);
+                const childNodes = item.childNodes;
+                if (childNodes.length > 0) {
+                    childNodes.forEach(child => {
+                        console.log('Child node:', child.nodeName);
+                    });
+                } else {
+                    console.log('No child nodes.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

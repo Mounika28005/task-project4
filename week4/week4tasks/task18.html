@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Array Methods: Sum and Filter</h1>
+    
+    <button onclick="performArrayOperations()">Calculate Sum and Filter Odd Numbers</button>
+    
+    <h2>Results:</h2>
+    <div id="results"></div>
+
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function performArrayOperations() {
+            const oddNumbers = numbers.filter(num => num % 2 !== 0);
+            const sum = oddNumbers.reduce((accumulator, current) => accumulator + current, 0);
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <p>Original Numbers: ${numbers.join(', ')}</p>
+                <p>Odd Numbers: ${oddNumbers.join(', ')}</p>
+                <p>Sum of Odd Numbers: ${sum}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

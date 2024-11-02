@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Clone List Item</h1>
+    <ul id="fruitList">
+        <li>Mango</li>
+        <li>Pineapple</li>
+        <li>Cherry</li>
+    </ul>
+    <button id="cloneItemButton">Clone Last Item</button>
+
+    <script>
+        document.getElementById('cloneItemButton').addEventListener('click', function() {
+            const lastItem = document.querySelector('#fruitList li:last-child');
+            const clonedItem = lastItem.cloneNode(true); 
+            document.getElementById('fruitList').appendChild(clonedItem);
+        });
+    </script>
+</body>
+</html>

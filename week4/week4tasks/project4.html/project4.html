@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <tittle>Quiz</tittle>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #0eed0e;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .choices {
+            list-style-type: none;
+        }
+        .choices li {
+            margin: 9px 0;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Application</h1>
+        <div class="question" id="question"></div>
+        <ul class="choices" id="choices"></ul>
+        <button id="prevButton" disabled>Previous</button>
+        <button id="nextButton">Next</button>
+        <div id="score" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of India?",
+                choices: ["Berlin", "Madrid", "New Delhi", "Lisbon"],
+                answer: 2
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                choices: ["Earth", "Mars", "Jupiter", "Saturn"],
+                answer: 1
+            },
+            {
+                question: "Who is 'the father of nation'?",
+                choices: ["Harper Lee", "Mahatma Gandhi", "F. Scott Fitzgerald", "Ernest Hemingway"],
+                answer: 1
+            },
+            {
+                question: "What is the largest ocean on Earth?",
+                choices: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+                answer: 3
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function displayQuestion() {
+            const questionElement = document.getElementById('question');
+            const choicesElement = document.getElementById('choices');
+
+            questionElement.textContent = questions[currentQuestionIndex].question;
+            choicesElement.innerHTML = '';
+
+            questions[currentQuestionIndex].choices.forEach((choice, index) => {
+                const li = document.createElement('li');
+                li.textContent = choice;
+                li.onclick = () => selectAnswer(index);
+                choicesElement.appendChild(li);
+            });
+
+            document.getElementById('prevButton').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextButton').textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next';
+        }
+
+        function selectAnswer(index) {
+            if (index === questions[currentQuestionIndex].answer) {
+                score++;
+            }
+            document.getElementById('score').textContent = `Current Score: ${score}`;
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                showFinalScore();
+            }
+        }
+
+        function showFinalScore() {
+            const quizContainer = document.querySelector('.quiz-container');
+            quizContainer.innerHTML = `<h1>Quiz Completed!</h1><p>Your final score is: ${score} out of ${questions.length}</p>`;
+        }
+
+        document.getElementById('prevButton').onclick = () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion();
+            }
+        };
+
+        document.getElementById('nextButton').onclick = () => {
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                showFinalScore();
+            }
+        };
+        displayQuestion();
+    </script>
+</body>
+</html>

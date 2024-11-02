@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        .default {
+            background-color: lightgray;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .active {
+            background-color: green;
+            color: white;
+        }
+
+        .inactive {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Toggle Classes</h1>
+    <button id="toggleButton" class="default">Click Me</button>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+
+        button.addEventListener('click', function() {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active');
+                button.classList.add('inactive');
+            } else {
+                button.classList.remove('inactive');
+                button.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

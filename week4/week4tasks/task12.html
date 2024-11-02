@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <tittle></tittle>
+</head>
+<body>
+    <h1>Personal Intro</h1>
+    <button onclick="introducePerson()">Introduce Me</button>
+    
+    <h2 id="introduction"></h2>
+
+    <script>
+        const person = {
+            name: "Mounika",
+            age: 20,
+            city: "Hindupur",
+            introduce: function() {
+                return `Hello! My name is ${this.name}, I am ${this.age} years old and I live in ${this.city}.`;
+            }
+        };
+        function introducePerson() {
+            const introductionMessage = person.introduce();
+            document.getElementById('introduction').innerText = introductionMessage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Number Iteration from 1 to 10</h1>
+    <h2>Using a for loop:</h2>
+    <div id="forLoopOutput"></div>
+
+    <h2>Using a while loop:</h2>
+    <div id="whileLoopOutput"></div>
+
+    <h2>Using a do...while loop:</h2>
+    <div id="doWhileLoopOutput"></div>
+
+    <script>
+        let forOutput = '';
+        for (let i = 1; i <= 10; i++) {
+            forOutput += i + '<br>';
+        }
+        document.getElementById('forLoopOutput').innerHTML = forOutput;
+        let whileOutput = '';
+        let j = 1;
+        while (j <= 10) {
+            whileOutput += j + '<br>';
+            j++;
+        }
+        document.getElementById('whileLoopOutput').innerHTML = whileOutput;
+        let doWhileOutput = '';
+        let k = 1;
+        do {
+            doWhileOutput += k + '<br>';
+            k++;
+        } while (k <= 10);
+        document.getElementById('doWhileLoopOutput').innerHTML = doWhileOutput;
+    </script>
+</body>
+</html>

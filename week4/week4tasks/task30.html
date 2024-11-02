@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Input Field Example</title>
+</head>
+<body>
+    <h1>Input Field and Button Example</h1>
+    <label for="userInput">Type something:</label>
+    <input type="text" id="userInput">
+    <button id="showAlertButton">Show Alert</button>
+
+    <script>
+        document.getElementById('userInput').onchange = function() {
+            console.log('Input changed to:', this.value);
+        };
+        document.getElementById('showAlertButton').onclick = function() {
+            alert('You entered: ' + document.getElementById('userInput').value);
+        };
+    </script>
+</body>
+</html>

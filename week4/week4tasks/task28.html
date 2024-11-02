@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Change Background Color</h1>
+    <button id="colorChangeButton">Change Background Color</button>
+
+    <script>
+        document.getElementById('colorChangeButton').addEventListener('click', function() {
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>
